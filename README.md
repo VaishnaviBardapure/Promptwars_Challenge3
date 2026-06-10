@@ -39,3 +39,4 @@ The production server will serve the built frontend and the API on `http://local
 
 - The app stores saved entries in local storage so you can revisit progress without a database.
 - The backend provides a simple `/api/actions` endpoint for dynamic climate recommendations.
+
