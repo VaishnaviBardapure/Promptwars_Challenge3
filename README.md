@@ -35,6 +35,18 @@ npm start
 
 The production server will serve the built frontend and the API on `http://localhost:4000`.
 
+## Deploy to Render
+
+Render is the recommended deployment platform for this fullstack app.
+
+1. Create a free Render account.
+2. Connect your GitHub repository: `https://github.com/VaishnaviBardapure/Promptwars_Challenge3`.
+3. Use these settings:
+   - Build command: `npm install && npm run build`
+   - Start command: `npm start`
+   - Environment: `Node`
+4. Optionally use the included `render.yaml` config for auto-deploy.
+
 ## Notes
 
 - The app stores saved entries in local storage so you can revisit progress without a database.

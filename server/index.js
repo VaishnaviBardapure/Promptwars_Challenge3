@@ -42,10 +42,13 @@ app.get('/api/actions', (req, res) => {
     res.json(recommendations)
 })
 
-if (process.env.NODE_ENV === 'production') {
-    app.use(express.static(path.join(__dirname, '..', 'dist')))
+const staticDist = path.join(__dirname, '..', 'dist')
+const shouldServeClient = process.env.NODE_ENV === 'production' || process.env.SERVE_DIST === 'true'
+
+if (shouldServeClient) {
+    app.use(express.static(staticDist))
     app.get('*', (req, res) => {
-        res.sendFile(path.join(__dirname, '..', 'dist', 'index.html'))
+        res.sendFile(path.join(staticDist, 'index.html'))
     })
 }
 
